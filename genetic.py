@@ -172,14 +172,15 @@ class GA:
             a, b = np.average(gen_data), np.max(gen_data)
             best, avg = np.append(best, b), np.append(avg, a)
             print("{}, {}".format(a, b))
-
+            # termination criteria
             if i > 10 and (prime - b)/prime < 10:
                 if best[i] == best[i - 9]:
                     sw = False
+            # improvement
             if i > 5 and (prime - b)/prime < 10 and r == True:
                 if best[i] == best[i - 4]:
                     self.mutation_rate = 0.8
-                    # self.crossover_method = 'UNIFORM'
+                    self.crossover_rate = 0.2
                     r = False
 
         time = time.time() - t
