@@ -79,10 +79,9 @@ class GA:
 
     def fitness(self, individual: str) -> int:
 
-        rho = np.max(np.array([self.knapsack.values/self.knapsack.weights]))
+        # rho = np.max(np.array([self.knapsack.values/self.knapsack.weights]))
         individual_vector = np.array(list(individual), dtype=int)
-        pen = rho * (np.dot(individual_vector,
-                     self.knapsack.weights) - self.knapsack.capacity)
+        # pen = rho * (np.dot(individual_vector, self.knapsack.weights) - self.knapsack.capacity)
         if self.knapsack.capacity < np.dot(individual_vector, self.knapsack.weights):
             # return np.dot(individual_vector, knapsack.values) - np.log2(pen+1)
             return self.knapsack.capacity - np.dot(individual_vector, self.knapsack.weights)
