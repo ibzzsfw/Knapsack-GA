@@ -68,8 +68,7 @@ class GA:
         while self.fitness(prime_individual) >= 0 and a < self.genome_size:
             p = ratio.index(ratio_key[a])
             a += 1
-            prime_individual = prime_individual[:p] + \
-                flip(prime_individual[p]) + prime_individual[p + 1:]
+            prime_individual = prime_individual[:p] + flip(prime_individual[p]) + prime_individual[p + 1:]
             if self.fitness(prime_individual) < 0:
                 prime_individual = prime_individual[:p] + flip(
                     prime_individual[p]) + prime_individual[p + 1:]
