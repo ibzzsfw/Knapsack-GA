@@ -44,7 +44,7 @@ def flip(bit: str) -> str:
 
 class GA:
 
-    def __init__(self, **kwargs): self.__dict__.update(kwargs)
+    def __init__(self, **kwargs) -> none: self.__dict__.update(kwargs)
 
     def initial(self) -> np.array:
 
@@ -56,7 +56,7 @@ class GA:
 
         return founder
 
-    def prime_individual(self):
+    def prime_individual(self) -> str:
 
         ratio = [0 for i in range(self.genome_size)]
         for i in range(self.genome_size):
@@ -144,7 +144,7 @@ class GA:
 
         return [self.fitness(individual) for individual in population]
 
-    def natural_selection(self):
+    def natural_selection(self) -> none:
 
         import time
 
